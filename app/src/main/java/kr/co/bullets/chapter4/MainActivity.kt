@@ -2,6 +2,7 @@ package kr.co.bullets.chapter4
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.goInputActivityButton.setOnClickListener {
+            // 명시적 인텐트
             val intent = Intent(this, EditActivity::class.java)
 //            intent.putExtra("intentMessage", "응급의료정보")
             startActivity(intent)
@@ -25,6 +27,15 @@ class MainActivity : AppCompatActivity() {
 
         binding.deleteButton.setOnClickListener {
             deleteData()
+        }
+
+        binding.emergencyContactLayer.setOnClickListener {
+            // 암시적 인텐트
+            with(Intent(Intent.ACTION_VIEW)) {
+                val phoneNumber = binding.emergencyContactValueTextView.text.toString().replace("-", "")
+                data = Uri.parse("tel:$phoneNumber")
+                startActivity(this)
+            }
         }
     }
 

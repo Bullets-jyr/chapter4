@@ -84,11 +84,22 @@
     <TextView
         android:id="@+id/emergencyContactValueTextView"
         style="@style/Value"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:text="010-9378-9025"
         app:layout_constraintBaseline_toBaselineOf="@id/emergencyContactTextView"
-        app:layout_constraintEnd_toEndOf="@id/nameValueTextView" />
+        app:layout_constraintEnd_toStartOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="@id/guideline" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_phone_24"
+        app:layout_constraintBottom_toBottomOf="@id/emergencyContactTextView"
+        app:layout_constraintEnd_toEndOf="@id/nameValueTextView"
+        app:layout_constraintTop_toTopOf="@id/emergencyContactTextView" />
 
     <TextView
         android:id="@+id/warningTextView"
@@ -127,5 +138,12 @@
         app:layout_constraintBottom_toTopOf="@id/goInputActivityButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_delete_24" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/emergencyContactLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="emergencyContactValueTextView,imageView"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
