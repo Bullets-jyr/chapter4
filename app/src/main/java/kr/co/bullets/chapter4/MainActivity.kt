@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.deleteButton.setOnClickListener {
-//            deleteData()
+            deleteData()
         }
     }
 
@@ -44,14 +44,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    private fun deleteData() {
-//        with(getSharedPreferences(USER_INFORMATION, Context.MODE_PRIVATE).edit()) {
-//            clear()
-//            apply()
-//            getDataAndUiUpdate()
-//        }
-//        Toast.makeText(this, "초기화를 완료했습니다.", Toast.LENGTH_SHORT).show()
-//    }
+    private fun deleteData() {
+        with(getSharedPreferences(USER_INFORMATION, Context.MODE_PRIVATE).edit()) {
+            clear()
+            apply()
+            getDataAndUiUpdate()
+        }
+        Toast.makeText(this, "초기화를 완료했습니다.", Toast.LENGTH_SHORT).show()
+    }
 
     override fun onResume() {
         super.onResume()
