@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.goInputActivityButton.setOnClickListener {
             val intent = Intent(this, EditActivity::class.java)
-            intent.putExtra("intentMessage", "응급의료정보")
+//            intent.putExtra("intentMessage", "응급의료정보")
             startActivity(intent)
         }
     }
