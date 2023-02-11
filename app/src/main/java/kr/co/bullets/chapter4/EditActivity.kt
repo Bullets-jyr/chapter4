@@ -65,6 +65,7 @@ class EditActivity : AppCompatActivity() {
 //        editor.commit()
 //        editor.apply()
 
+        // with: 객체 초기화, 람다 리턴 값이 필요 없을 때, 동작을 실행만 할 때
         with(getSharedPreferences(USER_INFORMATION, Context.MODE_PRIVATE).edit()) {
             putString(NAME, binding.nameValueEditText.text.toString())
             putString(BLOOD_TYPE, getBloodType())
